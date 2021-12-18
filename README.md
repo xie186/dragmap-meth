@@ -39,6 +39,16 @@ Python 3.10.1
 dragmap
 ```
 
+## Reference:
+
+Introducing DRAGMAP, the new genome mapper in DRAGEN-GATK: https://gatk.broadinstitute.org/hc/en-us/articles/4410953761563-Introducing-DRAGMAP-the-new-genome-mapper-in-DRAGEN-GATK
+
+Demystifying the versions of GRCh38/hg38 Reference Genomes, how they are used in DRAGEN™ and their impact on accuracy: https://www.illumina.com/science/genomics-research/articles/dragen-demystifying-reference-genomes.html
+
+https://github.com/DavidStreid/bio_docker/tree/main/dragmap
+
+https://github.com/HudsonAlpha/CSL_public_benchmark
+
 ## Acknowledgement
 
 Special thanks to [bwa-meth](https://github.com/brentp/bwa-meth) because part of the codes were adapted from bwa-meth. 
