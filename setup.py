@@ -30,6 +30,7 @@ setup(name='dragmap-meth',
       author="Shaojun Xie",
       author_email="xie186@purdue.edu",
       license="MIT",
+      url="https://github.com/xie186/dragmap-meth",
       install_requires=install_requires,
       long_description=open('README.md').read(),
       classifiers=[
