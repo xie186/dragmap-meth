@@ -35,31 +35,6 @@ __version__ = "0.1.1"
 def comp(s, _comp=maketrans('ATCG', 'TAGC')):
     return s.translate(_comp)
 
-### Adapted from bwa-meth
-def nopen_keep_parent_stdin(f, mode="r"):
-    if f.startswith("|"):
-        # using shell explicitly makes things like process substitution work:
-        # http://stackoverflow.com/questions/7407667/python-subprocess-subshells-and-redirection
-        # use sys.stderr so we dont have to worry about checking it...
-        p = Popen(f[1:], stdout=PIPE, stdin=sys.stdin,
-                  stderr=sys.stderr if mode == "r" else PIPE,
-                  shell=True, bufsize=-1, # use system default for buffering
-                  preexec_fn=toolshed.files.prefunc,
-                  close_fds=False, executable=os.environ.get('SHELL'))
-        if sys.version_info[0] > 2:
-            import io
-            p.stdout = io.TextIOWrapper(p.stdout)
-            p.stdin = io.TextIOWrapper(sys.stdin)
-            if mode != "r":
-                p.stderr = io.TextIOWrapper(p.stderr)
-
-        if mode and mode[0] == "r":
-            return toolshed.files.process_iter(p, f[1:])
-        return p
-    else:
-        return toolshed.files.nopen(f,mode)
-
-
 ## Adapted from bwameth.py
 class Bam(object):
     __slots__ = 'read flag chrom pos mapq cigar chrom_mate pos_mate tlen \
