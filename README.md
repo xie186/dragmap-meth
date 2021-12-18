@@ -14,6 +14,14 @@ Recovers the original read (needed to tabulate methylation).
 
 It allows us to align reads to nt database. 
 
+## Installation
+
+`dragmap-meth` is available on https://pypi.org/project/dragmap-meth/
+
+```
+pip install dragmap-meth
+```
+
 ## QuickStart
 
 The commands:
