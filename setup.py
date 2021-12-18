@@ -25,7 +25,7 @@ if sys.version_info[:2] < (2, 7):
 
 setup(name='dragmap-meth',
       version=get_version("dragmap-meth.py"),
-      description="align BS-Seq reads with dragmap",
+      description="Align BS-Seq reads with dragmap",
       py_modules=['dragmap-meth'],
       author="Shaojun Xie",
       author_email="xie186@purdue.edu",
