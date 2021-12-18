@@ -1,0 +1,54 @@
+##conda env export -n env4mbmeth --no-builds |grep -v 'prefix' |cut -f 1 -d "=" > environment.yaml
+
+
+dragmap_meth.egg-infodragmap_meth.egg-info/
+data/
+test.*
+compare/
+
+*.py[cod]
+*/data/*
+*.tmp
+# bio stuff
+*.c2t.*
+*.fai
+example/*.vcf
+*.bai
+*.dict
+
+*data/
+
+# C extensions
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist/
+build/
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+lib
+lib64
+__pycache__
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
