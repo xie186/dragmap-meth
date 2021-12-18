@@ -6,6 +6,9 @@ These commands can be run from this directory once `dragmap-meth` is installed
 ```Shell
 python ../dragmap-meth.py buildhashtable -r ref.fa -o ref/
 python  ../dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz |samtools view -bS - -o dragmap-meth.bam
+
+## Clean the folder:
+rm -rf ref.fa.dragmap.c2t ref/ dragmap-meth.bam
 ```
 
 Then check the alignments:
