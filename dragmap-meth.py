@@ -400,6 +400,7 @@ def dragmap(options):
     else:
         cmd = "dragen-os -r {database} -1 {read1} -2 {read2}".format(
                  read1 = read1_CT, database = options.hashtable_dir, read2 = read2_GA)
+    cmd = cmd + " --fastq-offset " + str(options.fastq_offset)
     cmd = cmd + " --num-threads " + str(options.threads)
     if options.rgid:
         cmd = cmd + " --RGID " + options.rgid + " --RGSM " + options.rgsm
@@ -456,7 +457,8 @@ if __name__ == '__main__':
                       help='Read Group ID', required=False)
     parse_DRAGMAP.add_argument('--RGSM', dest = 'rgsm', \
                       help='Read Group Sample', required=False)
- 
+    parse_DRAGMAP.add_argument('--fastq-offset', dest = 'fastq_offset', choices={33, 64}, type=int,\
+                      help='FASTQ quality offset value. Set to 33 (default) or 64', default = 33) 
     #-num_threads 
     parse_DRAGMAP.add_argument('-t', '--threads', type=int, \
                       help='Number of threads. Default: 1', default=1)
