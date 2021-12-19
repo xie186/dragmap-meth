@@ -401,6 +401,8 @@ def dragmap(options):
         cmd = "dragen-os -r {database} -1 {read1} -2 {read2}".format(
                  read1 = read1_CT, database = options.hashtable_dir, read2 = read2_GA)
     cmd = cmd + " --num-threads " + str(options.threads)
+    if options.rgid:
+        cmd = cmd + " --RGID " + options.rgid + " --RGSM " + options.rgsm
     logging.warning("Start to run: " + cmd)
     sam_iter = execute(cmd)
     for line in sam_iter:
@@ -449,6 +451,12 @@ if __name__ == '__main__':
                       help='Read1 in fastq format. Provide only -r1 if you have single end reads.', required=True)
     parse_DRAGMAP.add_argument('-r2', '--read2', metavar='read1', \
                       help='Read2 in fastq format', required=False)
+    
+    parse_DRAGMAP.add_argument('--RGID', dest = 'rgid', \
+                      help='Read Group ID', required=False)
+    parse_DRAGMAP.add_argument('--RGSM', dest = 'rgsm', \
+                      help='Read Group Sample', required=False)
+ 
     #-num_threads 
     parse_DRAGMAP.add_argument('-t', '--threads', type=int, \
                       help='Number of threads. Default: 1', default=1)
@@ -461,6 +469,9 @@ if __name__ == '__main__':
     options = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
     dict_cmd = vars(options)
     logging.warning("Subcommand is: " + dict_cmd['command'])
+    if len([x for x in (options.rgid, options.rgsm) if x is not None]) == 1:
+        parser.error('--RGID and --RGSM must be given together')
+
     ## Build hash table
     if dict_cmd['command'] == SUB_HT:
         ## return c2t converted reference genome 
