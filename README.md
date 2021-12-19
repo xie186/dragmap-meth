@@ -7,13 +7,6 @@ Alignment of BS-Seq reads using [dragmap](https://github.com/Illumina/DRAGMAP).
 This works for single-end reads and for **paired-end reads from the
 directional protocol** (most common).
 
-Uses the method employed by methylcoder and Bismark of *in silico*
-conversion of all C's to T's in both reference and reads.
-
-Recovers the original read (needed to tabulate methylation).
-
-It allows us to align reads to nt database. 
-
 ## Installation
 
 ### Install `dragmap-meth` via `pip`
