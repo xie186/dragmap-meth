@@ -20,6 +20,22 @@ pip install dragmap-meth
 
 ```
 conda env create -n env4dragmap-meth --file environment.yaml python=3
+https://github.com/xie186/dragmap-meth.git
+
+python ./dragmap-meth.py -h 
+usage: dragmap-meth.py [-h] {buildhashtable,dragmap} ...
+
+dragmap-meth: bisulfite reads mapper using dragmap-meth
+
+positional arguments:
+  {buildhashtable,dragmap}
+                        sub-command help
+    buildhashtable      Build hash table of a reference genome for alignent
+    dragmap             Align bisulfite reads using dragmap
+
+options:
+  -h, --help            show this help message and exit
+
 ```
 
 ## QuickStart
