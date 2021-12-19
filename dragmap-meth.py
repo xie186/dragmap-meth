@@ -321,7 +321,7 @@ def handle_header(line, cmd, out=sys.stdout):
         toks = ["%s\tSN:%s\t%s" % (sq, chrom, ln)]
     if toks[0].startswith("@PG"):
         out.write("\t".join(toks) + "\n")
-        toks = ["@PG\tID:mbmeth\tPN:mbmeth\tCL:%s" % (" ".join(x.replace("\t", "\\t") for x in sys.argv))]
+        toks = ["@PG\tID:dragmap-meth\tPN:dragmap-meth\tCL:%s" % (" ".join(x.replace("\t", "\\t") for x in sys.argv))]
     out.write("\t".join(toks) + "\n")
 
 ## Adapted from bwameth
