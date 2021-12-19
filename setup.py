@@ -34,7 +34,7 @@ setup(name='dragmap-meth',
       install_requires=install_requires,
       long_description=open('README.md').read(),
       classifiers=[
-      'Topic :: Scientific/Engineering :: Bioinformatics', 
+      'Topic :: Scientific/Engineering :: Bio-Informatics', 
       'Programming Language :: Python :: 2',
       'Programming Language :: Python :: 3'
       ],

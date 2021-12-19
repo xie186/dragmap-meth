@@ -1,6 +1,6 @@
 ##conda env export -n env4mbmeth --no-builds |grep -v 'prefix' |cut -f 1 -d "=" > environment.yaml
 
-
+*bam
 dragmap_meth.egg-infodragmap_meth.egg-info/
 data/
 test.*

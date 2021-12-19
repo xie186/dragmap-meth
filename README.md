@@ -10,32 +10,19 @@ directional protocol** (most common).
 ## Installation
 
 ### Install `dragmap-meth` via `pip`
+
 `dragmap-meth` is available on https://pypi.org/project/dragmap-meth/
 
 ```
 pip install dragmap-meth
 ```
 
-##  Install `dragmap-meth` via `conda`
+## Install `dragmap-meth` via `conda`
 
 ```
 conda env create -n env4dragmap-meth --file environment.yaml python=3
-https://github.com/xie186/dragmap-meth.git
-
-python ./dragmap-meth.py -h 
-usage: dragmap-meth.py [-h] {buildhashtable,dragmap} ...
-
-dragmap-meth: bisulfite reads mapper using dragmap-meth
-
-positional arguments:
-  {buildhashtable,dragmap}
-                        sub-command help
-    buildhashtable      Build hash table of a reference genome for alignent
-    dragmap             Align bisulfite reads using dragmap
-
-options:
-  -h, --help            show this help message and exit
-
+git clone https://github.com/xie186/dragmap-meth.git
+cd dragmap-meth/
 ```
 
 ## QuickStart
@@ -49,7 +36,6 @@ python  dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz |sa
 
 will create `dragmap-meth.bam`. 
 To align single end-reads, specify only 1 file: `-r1 some_read.fastq.gz`
-
 
 ### Dependencies
 
