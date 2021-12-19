@@ -16,10 +16,17 @@ It allows us to align reads to nt database.
 
 ## Installation
 
+### Install `dragmap-meth` via `pip`
 `dragmap-meth` is available on https://pypi.org/project/dragmap-meth/
 
 ```
 pip install dragmap-meth
+```
+
+##  Install `dragmap-meth` via `conda`
+
+```
+conda env create -n env4dragmap-meth --file environment.yaml python=3
 ```
 
 ## QuickStart
@@ -34,11 +41,6 @@ python  dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz |sa
 will create `dragmap-meth.bam`. 
 To align single end-reads, specify only 1 file: `-r1 some_read.fastq.gz`
 
-## Installation
-
-```
-conda env create -n env4dragmap-meth --file environment.yaml python=3
-```
 
 ### Dependencies
 
@@ -59,5 +61,5 @@ https://github.com/HudsonAlpha/CSL_public_benchmark
 
 ## Acknowledgement
 
-Special thanks to [bwa-meth](https://github.com/brentp/bwa-meth) because part of the codes were adapted from bwa-meth. 
+Special thanks to [bwa-meth](https://github.com/brentp/bwa-meth). Part of the codes were adapted from bwa-meth. 
 
