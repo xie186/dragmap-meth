@@ -11,6 +11,8 @@ python  ../dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz 
 rm -rf ref.fa.dragmap.c2t ref/ dragmap-meth.bam
 ```
 
+
+
 Then check the alignments:
 
 ```Shell
@@ -30,3 +32,17 @@ samtools flagstat dragmap-meth.bam
 ```
 From here, it is recommended to use [PileOMeth](https://github.com/dpryan79/PileOMeth) for extraction and tabulation of the methylation.
 
+
+## Add `RG` tab
+
+```
+python  ../dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz --RGID test --RGSM test_sm |samtools view -bS - -o dragmap-meth.RG.bam
+```
+
+## Change fastq offset
+
+Either use 33 or 64. 
+
+```
+python  ../dragmap-meth.py dragmap -ht ref/ -r1 t_R1.fastq.gz -r2 t_R2.fastq.gz --RGID test --RGSM test_sm --fastq-offset 33 |samtools view -bS - -o dragmap-meth.RG.bam
+```
