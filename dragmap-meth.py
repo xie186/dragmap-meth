@@ -30,7 +30,7 @@ SUB_SUMMARY = "summary"
 ID_SPLIT = "__sequence__"
 TEMP_FILE = []
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 def comp(s, _comp=maketrans('ATCG', 'TAGC')):
     return s.translate(_comp)
