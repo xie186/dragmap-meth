@@ -53,3 +53,6 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+#Analysis path:
+# /me*/o*/e*1/W*C/dragmap_meth_analysis
